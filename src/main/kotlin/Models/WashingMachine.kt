@@ -1,5 +1,9 @@
 package Models
 
+import Utilities.GREEN_BOLD_BRIGHT
+import Utilities.PURPLE
+import Utilities.RESET
+
 class WashingMachine: Appliance {
     // Attributes
     private var load: Float = 5f
@@ -87,12 +91,12 @@ class WashingMachine: Appliance {
     }
 
     override fun toString(): String {
-        return "- ${super.getName()}\n" +
-                "    - Base Price: ${super.getBasePrice()}\n" +
-                "    - Color: ${super.getColor()}\n" +
-                "    - Consumption: ${super.getCons()}\n" +
-                "    - Weight: ${super.getWeight()}\n" +
-                "    - Load: ${this.load}\n" +
-                "    - Final Price: ${this.calculateFinalPrice_WM(this.load)}\n"
+        return GREEN_BOLD_BRIGHT + "- ${super.getName()}\n" +
+                PURPLE + "    - Base Price: $RESET${super.getBasePrice()}€\n" +
+                PURPLE + "    - Color: $RESET${super.getColor()}\n" +
+                PURPLE + "    - Consumption: $RESET${super.getCons()}\n" +
+                PURPLE + "    - Weight: $RESET${super.getWeight()}Kg\n" +
+                PURPLE + "    - Load: $RESET${this.load}Kg\n" +
+                PURPLE + "    - Final Price: $RESET${this.calculateFinalPrice_WM(this.load)}€\n"
     }
 }

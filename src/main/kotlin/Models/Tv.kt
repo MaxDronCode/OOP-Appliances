@@ -1,5 +1,10 @@
 package Models
 
+import Utilities.GREEN_BOLD_BRIGHT
+import Utilities.RED
+import Utilities.RESET
+import Utilities.YELLOW
+
 class Tv : Appliance {
     // Atributtes
     private var inch: Short = 28
@@ -85,12 +90,12 @@ class Tv : Appliance {
     }
 
     override fun toString(): String {
-        return "- ${super.getName()}\n" +
-                "    - Base Price: ${super.getBasePrice()}\n" +
-                "    - Color: ${super.getColor()}\n" +
-                "    - Consumption: ${super.getCons()}\n" +
-                "    - Weight: ${super.getWeight()}\n" +
-                "    - Inch: ${this.inch}\n" +
-                "    - Final Price: ${this.calculateFinalPrice_Tv(this.inch)}\n"
+        return GREEN_BOLD_BRIGHT + "- ${super.getName()}\n" +
+                RED + "    - Base Price: $RESET${super.getBasePrice()}€\n" +
+                RED + "    - Color: $RESET${super.getColor()}\n" +
+                RED + "    - Consumption: $RESET${super.getCons()}\n" +
+                RED + "    - Weight: $RESET${super.getWeight()}Kg\n" +
+                RED + "    - Inch: $RESET${this.inch}'\n" +
+                RED + "    - Final Price: $RESET${this.calculateFinalPrice_Tv(this.inch)}€\n"
     }
 }

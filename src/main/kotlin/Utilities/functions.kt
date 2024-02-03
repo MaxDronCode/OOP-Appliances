@@ -50,14 +50,14 @@ fun calculateFinalPrices (appliances: ArrayList<Appliance>): Array<Float> {
  */
 fun printFinalPrices(finalPrices: Array<Float>){
     println("""
-        - Appliances: 
-            - Base Price: ${finalPrices[0]}
-            - Final Price: ${finalPrices[1]}
-        - Washing Machines: 
-            - Base Price: ${finalPrices[2]}
-            - Final Price: ${finalPrices[3]}
-        - Tv's:
-            - Base Price: ${finalPrices[4]}
-            - Final Price: ${finalPrices[5]}
+        $GREEN_BOLD_BRIGHT- Appliances: 
+            $BLUE- Base Price: $WHITE_BRIGHT${finalPrices[0]}€
+            $BLUE- Final Price: $WHITE_BRIGHT${finalPrices[1]}€
+        $GREEN_BOLD_BRIGHT- Washing Machines: 
+            $PURPLE- Base Price: $WHITE_BRIGHT${finalPrices[2]}€
+            $PURPLE- Final Price: $WHITE_BRIGHT${finalPrices[3]}€
+        $GREEN_BOLD_BRIGHT- Tv's:
+            $RED- Base Price: $WHITE_BRIGHT${finalPrices[4]}€
+            $RED- Final Price: $WHITE_BRIGHT${finalPrices[5]}€
     """.trimIndent())
 }

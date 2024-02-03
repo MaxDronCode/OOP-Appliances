@@ -1,5 +1,8 @@
 package Models
 
+import Utilities.BLUE
+import Utilities.GREEN_BOLD_BRIGHT
+import Utilities.RESET
 import java.awt.Color
 
 open class Appliance {
@@ -109,12 +112,12 @@ open class Appliance {
     }
 
     override fun toString(): String {
-        return "- ${this.name}\n" +
-                "    - Base Price: ${this.basePrice}\n" +
-                "    - Color: ${this.color}\n" +
-                "    - Consumption: ${this.consumption}\n" +
-                "    - Weight: ${this.weight}\n" +
-                "    - Final Price: ${calculateFinalPrice(this.consumption, this.weight)}\n"
+        return GREEN_BOLD_BRIGHT + "- ${this.name}\n" +
+                BLUE + "    - Base Price: $RESET${this.basePrice}€\n" +
+                BLUE + "    - Color: $RESET${this.color}\n" +
+                BLUE + "    - Consumption: $RESET${this.consumption}\n" +
+                BLUE + "    - Weight: $RESET${this.weight}Kg\n" +
+                BLUE + "    - Final Price: $RESET${calculateFinalPrice(this.consumption, this.weight)}€\n"
     }
 
 
