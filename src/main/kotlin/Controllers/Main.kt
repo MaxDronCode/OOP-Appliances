@@ -3,6 +3,8 @@ package Controllers
 import Models.Appliance
 import Models.Tv
 import Models.WashingMachine
+import Utilities.calculateFinalPrices
+import Utilities.printFinalPrices
 import java.util.Objects
 
 fun main(args: Array<String>) {
@@ -56,6 +58,10 @@ fun main(args: Array<String>) {
     // Execution
 
     for (appliance in appliances) println(appliance)
+
+    var finalPrices: Array<Float> = calculateFinalPrices(appliances)
+
+    printFinalPrices(finalPrices)
 
 
 
