@@ -2,7 +2,7 @@ package Models
 
 import java.awt.Color
 
-class Appliance {
+open class Appliance {
     // Attributes
     private var name: String = ""
     private var basePrice: Float = 0.0f
@@ -14,11 +14,28 @@ class Appliance {
     // Methods
 
     // Constructors
+    /**
+     * Constructor that generates a new appliance with the name and price you want, and initializes the other attributes with default values.
+     * @author Max Dron
+     * @since 03/02/2024
+     * @param name Sets the name
+     * @param basePrice Sets the base price
+     */
     constructor(name: String, basePrice: Float){
         this.name = name
         this.basePrice = basePrice
     }
 
+    /**
+     * Constructor that generates an appliance by passing the data for all the attributes.
+     * @author Max Dron
+     * @since 03/02/2024
+     * @param name Sets the name
+     * @param basePrice Sets the base price
+     * @param color Sets the color
+     * @param consumption Sets the consumption
+     * @param weight Sets the weight
+     */
     constructor(name: String, basePrice: Float, color: String, consumption: Char, weight: Float){
         this.name = name
         this.basePrice = basePrice
@@ -28,30 +45,33 @@ class Appliance {
     }
 
     // Getters
-    fun getBasePrice(): Float {
+    fun getName(): String {
+        return this.name
+    }
+    open fun getBasePrice(): Float {
         return this.basePrice
     }
-    fun getColor(): String {
+    open fun getColor(): String {
         return this.color
     }
-    fun getCons(): Char {
+    open fun getCons(): Char {
         return this.consumption
     }
-    fun getWeight(): Float {
+    open fun getWeight(): Float {
         return this.weight
     }
 
     // Setters
-    fun setBasePrice(price: Float){
+    open fun setBasePrice(price: Float){
         this.basePrice = price
     }
-    fun setColor(color: String){
+    open fun setColor(color: String){
         this.color = color
     }
-    fun setCons(cons: Char){
+    open fun setCons(cons: Char){
         this.consumption = cons
     }
-    fun setWeight(weight: Float){
+    open fun setWeight(weight: Float){
         this.weight = weight
     }
 
@@ -64,7 +84,7 @@ class Appliance {
      * @param weight Weight of the appliance
      * @return output - New price
      */
-    fun calculateFinalPrice (cons: Char,weight: Float): Float {
+    open fun calculateFinalPrice (cons: Char,weight: Float): Float {
         var output: Float = getBasePrice()
 
         output += when (cons.uppercaseChar()){
@@ -79,22 +99,35 @@ class Appliance {
 
         output += when (weight) {
             in 0f..5.99f -> 0
-            in 6f..20f -> 20
-            in 21f..50f -> 50
+            in 6f..20.99f -> 20
+            in 21f..50.99f -> 50
             in 51f..80f -> 80
             else -> 100
         }
+
+
+
+        /*output += when (inches) {
+            in 0f..28.99f -> 0
+            in 29f..31.99f -> 50
+            in 32f..41.99f -> 100
+            in 42f..50.99f -> 150
+            else -> 200
+
+        }*/
 
         return output
     }
 
     override fun toString(): String {
         return "- ${this.name}\n" +
-                "    - ${this.basePrice}|n" +
-                "    - ${this.color}\n" +
-                "    - ${this.consumption}\n" +
-                "    - ${this.weight}\n" +
-                "    - ${this.finalPrice}\n"
+                "    - Base Price: ${this.basePrice}|n" +
+                "    - Color: ${this.color}\n" +
+                "    - Consumption: ${this.consumption}\n" +
+                "    - Weight: ${this.weight}\n" +
+                "    - Final Price: ${this.finalPrice}\n"
     }
+
+
 
 }
