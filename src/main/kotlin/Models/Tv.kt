@@ -86,11 +86,11 @@ class Tv : Appliance {
 
     override fun toString(): String {
         return "- ${super.getName()}\n" +
-                "    - Base Price: ${super.getBasePrice()}|n" +
+                "    - Base Price: ${super.getBasePrice()}\n" +
                 "    - Color: ${super.getColor()}\n" +
                 "    - Consumption: ${super.getCons()}\n" +
                 "    - Weight: ${super.getWeight()}\n" +
-                "    - Inch: ${this.inch}" +
+                "    - Inch: ${this.inch}\n" +
                 "    - Final Price: ${this.calculateFinalPrice_Tv(this.inch)}\n"
     }
 }

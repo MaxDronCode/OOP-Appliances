@@ -53,6 +53,12 @@ fun main(args: Array<String>) {
     val lgOled: Tv = Tv("LG OLED", 1299f, "Grey", 'A', 15.5f, 55)
     appliances.add(lgOled)
 
+    // Execution
+
+    for (appliance in appliances) println(appliance)
+
+
+
 
 
 

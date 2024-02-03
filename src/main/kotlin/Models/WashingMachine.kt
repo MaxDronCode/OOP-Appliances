@@ -88,11 +88,11 @@ class WashingMachine: Appliance {
 
     override fun toString(): String {
         return "- ${super.getName()}\n" +
-                "    - Base Price: ${super.getBasePrice()}|n" +
+                "    - Base Price: ${super.getBasePrice()}\n" +
                 "    - Color: ${super.getColor()}\n" +
                 "    - Consumption: ${super.getCons()}\n" +
                 "    - Weight: ${super.getWeight()}\n" +
-                "    - Load: ${this.load}" +
+                "    - Load: ${this.load}\n" +
                 "    - Final Price: ${this.calculateFinalPrice_WM(this.load)}\n"
     }
 }

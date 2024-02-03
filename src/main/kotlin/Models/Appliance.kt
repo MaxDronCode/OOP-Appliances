@@ -9,7 +9,6 @@ open class Appliance {
     private var color: String = "white"
     private var consumption: Char = 'G'
     private var weight: Float = 5f
-    private var finalPrice: Float = calculateFinalPrice(this.consumption, this.weight)
 
     // Methods
 
@@ -85,7 +84,7 @@ open class Appliance {
      * @return output - New price
      */
     open fun calculateFinalPrice (cons: Char,weight: Float): Float {
-        var output: Float = getBasePrice()
+        var output: Float = this.basePrice
 
         output += when (cons.uppercaseChar()){
             'A' -> 35
@@ -106,28 +105,17 @@ open class Appliance {
         }
 
 
-
-        /*output += when (inches) {
-            in 0f..28.99f -> 0
-            in 29f..31.99f -> 50
-            in 32f..41.99f -> 100
-            in 42f..50.99f -> 150
-            else -> 200
-
-        }*/
-
         return output
     }
 
     override fun toString(): String {
         return "- ${this.name}\n" +
-                "    - Base Price: ${this.basePrice}|n" +
+                "    - Base Price: ${this.basePrice}\n" +
                 "    - Color: ${this.color}\n" +
                 "    - Consumption: ${this.consumption}\n" +
                 "    - Weight: ${this.weight}\n" +
-                "    - Final Price: ${this.finalPrice}\n"
+                "    - Final Price: ${calculateFinalPrice(this.consumption, this.weight)}\n"
     }
-
 
 
 }
